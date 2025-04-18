@@ -1,0 +1,22 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        
+        
+        if len(prices)==1:
+            maxP=0
+        else:
+            maxP=-10000
+            diff=-10000
+            buy=prices[0]
+            current=0
+            for current in range(0,len(prices)):
+                if prices[current]<buy:
+                    buy=prices[current]
+                else: 
+                    diff=prices[current]-buy
+                    if diff>maxP:
+                        maxP=diff
+        return maxP
+            
+
+        
