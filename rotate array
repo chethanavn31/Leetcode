@@ -1,0 +1,22 @@
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        if k>len(nums):
+            x=k//len(nums)
+            k=k-x*len(nums)
+        if k<1 or len(nums)==1:
+            return nums
+        else:
+            temp=[]
+            for i in range(-k,0,1):
+                temp.append(nums[i])
+
+            for j in range(-k-1,-len(nums)-1,-1):
+                nums[j+k]=nums[j]
+
+            for l in range(0,k):
+                nums[l]=temp[l]
+        return nums
+        
+    
+   
+        
